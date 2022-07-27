@@ -2,15 +2,15 @@ import { Schema, model, models } from "mongoose";
 
 const hechizoSchema = new Schema(
   {
-    name: { type: String, require: true, unique: true },
-    slug: { type: String, require: true, unique: true },
+    name: { type: String, require: true },
     coste: { type: String, require: true },
     requisito: { type: String, require: true },
     alcance: { type: String, require: true },
     valor: { type: String, require: true },
     desc: { type: String, require: true },
+    alma: { type: String, require: true },
+    accion: { type: String, require: true },
     nota: { type: String },
-    alma: { type: String, require: true, enum: ["Azul", "Blanca", "Negra", "prueba"] },
   },
   {
     timestamps: true,
