@@ -11,7 +11,7 @@ const addHechizo = async (req, res) => {
     await connectMongo();
     if (req.method === "POST") {
       const hechizo = await Hechizo.create(req.body);
-      res.redirect(301, process.env.NEXT_PUBLIC_URL);
+      res.redirect(301, '/');
     } else if (req.method === "GET") {
       const hechizo = await Hechizo.find();
       res.json(hechizo);
