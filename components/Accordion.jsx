@@ -7,7 +7,7 @@ const Accordion = ({ accordionData }) => {
     <>
       <div className="w-full border rounded max-w-[800px]">
         <p
-          className="flex p-4 justify-between w-full"
+          className="flex p-4 justify-between w-full cursor-pointer font-semibold hover:font-bold hover:bg-stone-900 transition-all"
           onClick={() => setAccordionActive((prev) => !prev)}
         >
           {accordionData.name}
