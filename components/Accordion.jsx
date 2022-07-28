@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Accordion = ({ accordionData }) => {
+const AccordionHechizo = ({ accordionData }) => {
   const [accordionActive, setAccordionActive] = useState(false);
 
   return (
@@ -16,31 +16,13 @@ const Accordion = ({ accordionData }) => {
         {accordionActive && (
           <div className="flex flex-wrap text-center justify-center gap-4 p-4">
             <div className="w-1/3 max-w-[300px] flex flex-col">
-              <span className="border-b border-stone-500 font-bold">REQUISITO</span>
-              <span className="py-2">{accordionData.requisito}</span>
-            </div>
-            <div className="w-1/3 max-w-[300px] flex flex-col">
               <span className="border-b border-stone-500 font-bold">COSTE</span>
               <span className="py-2">{accordionData.coste}</span>
             </div>
-            <div className="w-1/3 max-w-[300px] flex flex-col">
-              <span className="border-b border-stone-500 font-bold">ALCANCE</span>
-              <span className="py-2">{accordionData.alcance}</span>
-            </div>
-            <div className="w-1/3 max-w-[300px] flex flex-col">
-              <span className="border-b border-stone-500 font-bold">VALOR</span>
-              <span className="py-2">{accordionData.valor}</span>
-            </div>
-            <div className="w-1/3 max-w-[300px] flex flex-col">
-              <span className="border-b border-stone-500 font-bold">ALMA</span>
-              <span className="py-2">{accordionData.alma}</span>
-            </div>
-            <div className="w-1/3 max-w-[300px] flex flex-col">
-              <span className="border-b border-stone-500 font-bold">ACCION</span>
-              <span className="py-2">{accordionData.accion}</span>
-            </div>
             <div className="w-full flex flex-col">
-              <span className="border-b border-stone-500 font-bold">DESCRIPCION</span>
+              <span className="border-b border-stone-500 font-bold">
+                DESCRIPCION
+              </span>
               <span className="py-2">{accordionData.desc}</span>
             </div>
           </div>
@@ -50,4 +32,4 @@ const Accordion = ({ accordionData }) => {
   );
 };
 
-export default Accordion;
+export default AccordionHechizo;

@@ -1,6 +1,5 @@
 import useSWR from "swr";
 import { useRouter } from "next/dist/client/router";
-import Link from "next/link";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
