@@ -1,6 +1,9 @@
+import Section from "../../../components/Section";
+import Link from "next/link";
+
 const Crear = () => {
   return (
-    <section className="bg-stone-800 w-full max-w-[1000px] flex flex-col items-center p-4 gap-4">
+    <Section>
       <div className="w-full">
         <p className="text-4xl font-semibold w-full text-center border-b">
           Crear merito
@@ -38,7 +41,12 @@ const Crear = () => {
           <button className="bg-white">CREAR</button>
         </form>
       </div>
-    </section>
+      <Link href='/'>
+          <a className="absolute top-0 left-4 text-5xl opacity-50 hover:opacity-100">
+            ‹
+          </a>
+        </Link>
+    </Section>
   );
 };
 

@@ -1,6 +1,8 @@
 import Accordion from "../../components/Accordion";
 import useSWR from "swr";
 import Spinner from "../../components/Spinner";
+import Section from "../../components/Section";
+import Link from 'next/link'
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -8,13 +10,18 @@ const Meritos = () => {
   const { data } = useSWR("/api/meritos", fetcher);
   return (
     <>
-      <section className="p-4 w-full max-w-[1000px] bg-stone-800 rounded flex flex-col gap-4 items-center shadow-xl shadow-stone-900/25">
+      <Section>
         {data ? (
           data.map((item) => <Accordion key={item._id} accordionData={item} />)
         ) : (
           <Spinner />
         )}
-      </section>
+        <Link href='/'>
+          <a className="absolute top-0 left-4 text-5xl opacity-50 hover:opacity-100">
+            ‹
+          </a>
+        </Link>
+      </Section>
     </>
   );
 };

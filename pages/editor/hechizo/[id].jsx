@@ -1,5 +1,7 @@
 import useSWR from "swr";
 import { useRouter } from "next/dist/client/router";
+import Section from "../../../components/Section";
+import Link from "next/link";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -9,7 +11,7 @@ const Editar = () => {
   const { data } = useSWR(`/api/hechizos/${id}`, fetcher);
   console.log(id);
   return (
-    <section className="bg-stone-800 w-full max-w-[1000px] flex flex-col items-center p-4 gap-4">
+    <Section>
       {data && (
         <>
           <p className="text-4xl font-semibold w-full text-center border-b">
@@ -110,7 +112,12 @@ const Editar = () => {
           </form>
         </>
       )}
-    </section>
+      <Link href="/">
+        <a className="absolute top-0 left-4 text-5xl opacity-50 hover:opacity-100">
+          ‹
+        </a>
+      </Link>
+    </Section>
   );
 };
 

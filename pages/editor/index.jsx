@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { useState } from "react";
+import Section from "../../components/Section";
 
 const HechizoEditor = () => {
   return (
-    <section className="bg-stone-800 w-full max-w-[1000px] flex flex-col items-center p-4 gap-4">
+    <Section>
       <p className="text-4xl font-semibold w-full text-center border-b">
         Editor de Hechizos
       </p>
@@ -22,7 +23,12 @@ const HechizoEditor = () => {
       <Link href="/editor/merito/editar">
         <a className="underline hover:font-semibold">Editar un merito</a>
       </Link>
-    </section>
+      <Link href='/'>
+          <a className="absolute top-0 left-4 text-5xl opacity-50 hover:opacity-100">
+            ‹
+          </a>
+        </Link>
+    </Section>
   );
 };
 
