@@ -8,24 +8,27 @@ const Editar = () => {
   const { data } = useSWR("/api/meritos", fetcher);
   return (
     <Section>
-      <p className="text-4xl font-semibold w-full text-center border-b">
+      <p className="text-4xl font-semibold w-full text-center underline">
         Editar Meritos
       </p>
       <ul className="flex flex-col gap-4 items-center">
         {data &&
           data.map((item) => (
-            <li key={item._id}>
+            <li
+              key={item._id}
+              className="hover:scale-110 hover:underline text-2xl font-semibold"
+            >
               <Link href={`/editor/merito/${item._id}`}>
-                <a className="underline hover:font-semibold">{item.name}</a>
+                <a>{item.name}</a>
               </Link>
             </li>
           ))}
       </ul>
-      <Link href='/'>
-          <a className="absolute top-0 left-4 text-5xl opacity-50 hover:opacity-100">
-            ‹
-          </a>
-        </Link>
+      <Link href="/">
+        <a className="absolute top-0 left-4 text-5xl opacity-50 hover:opacity-100">
+          ‹
+        </a>
+      </Link>
     </Section>
   );
 };

@@ -13,11 +13,11 @@ const Editar = () => {
     <Section>
       {data && (
         <>
-          <p className="text-4xl font-semibold w-full text-center border-b">
+          <p className="text-4xl font-semibold w-full text-center underline">
             Editando nerito {data.name}
           </p>
           <form
-            className="flex flex-col gap-4 p-4 text-stone-800 w-full max-w-[800px]"
+            className="flex flex-col justify-center items-center gap-4 p-4 text-stone-800 w-full max-w-[500px]"
             method="post"
             action={process.env.NEXT_PUBLIC_URL + "/api/meritos/" + id}
           >
@@ -50,7 +50,7 @@ const Editar = () => {
               className="p-2 w-full"
               placeholder="Nota (Este campo no es requerido)"
             />
-            <button className="bg-white">EDITAR</button>
+            <button className="bg-white px-8 py-2 rounded-lg">Editar</button>
           </form>
         </>
       )}

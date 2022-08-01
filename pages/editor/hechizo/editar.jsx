@@ -8,15 +8,18 @@ const Editar = () => {
   const { data } = useSWR("/api/hechizos", fetcher);
   return (
     <Section>
-      <p className="text-4xl font-semibold w-full text-center border-b">
+      <p className="text-4xl font-semibold w-full text-center underline">
         Editar Hechizo
       </p>
       <ul className="flex flex-col gap-4 items-center">
         {data &&
           data.map((item) => (
-            <li key={item._id}>
+            <li
+              key={item._id}
+              className="hover:scale-110 hover:underline text-2xl font-semibold"
+            >
               <Link href={`/editor/hechizo/${item._id}`}>
-                <a className="underline hover:font-semibold">{item.name}</a>
+                <a>{item.name}</a>
               </Link>
             </li>
           ))}
